@@ -469,7 +469,83 @@ h2{
   background:#9a2f24;
 }
 
-/* ── Discount / Advertisement Styles ── */
+/* ── Payment Methods ── */
+.payment-methods{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-bottom:24px;
+}
+
+.payment-option{
+  display:flex;
+  gap:16px;
+  padding:20px;
+  background:rgba(47,74,60,0.05);
+  border-radius:8px;
+  border:1px solid rgba(47,74,60,0.1);
+  align-items:flex-start;
+}
+
+.payment-icon{
+  font-size:28px;
+  flex-shrink:0;
+  width:48px;
+  height:48px;
+  background:rgba(47,74,60,0.08);
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.payment-details{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  flex:1;
+}
+
+.payment-details h4{
+  font-size:16px;
+  font-weight:700;
+  color:var(--red);
+  margin:0;
+}
+
+.payment-details p{
+  font-size:13px;
+  color:var(--pine);
+  margin:0;
+  line-height:1.5;
+}
+
+.qr-placeholder{
+  margin-top:12px;
+  width:120px;
+  height:120px;
+  background:rgba(47,74,60,0.08);
+  border-radius:8px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  border:2px dashed rgba(47,74,60,0.2);
+}
+
+.qr-placeholder span{
+  font-family:'Yellowtail', cursive;
+  font-size:18px;
+  color:var(--pine);
+  opacity:0.6;
+}
+
+.qr-placeholder small{
+  font-size:11px;
+  color:var(--pine);
+  opacity:0.5;
+  margin-top:4px;
+}
 .discount-row{
   position:relative;
 }
