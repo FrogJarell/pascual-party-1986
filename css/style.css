@@ -123,10 +123,10 @@ body{
 }
 
 /* ══════════════════════════════════════════
-   TYPOGRAPHY — Mobile First
+   TYPOGRAPHY — Mobile First (readable portrait)
    ══════════════════════════════════════════ */
 .eyebrow{
-  font-size:13px;
+  font-size:14px;
   letter-spacing:2px;
   text-transform:uppercase;
   color:var(--pine);
@@ -137,22 +137,22 @@ body{
 
 h1{
   font-family:'Yellowtail', cursive;
-  font-size:42px;
-  line-height:1;
+  font-size:48px;
+  line-height:1.1;
   color:var(--red);
-  margin:0 0 4px;
+  margin:0 0 6px;
 }
 
 h2{
   font-family:'Yellowtail', cursive;
-  font-size:32px;
-  line-height:1;
+  font-size:36px;
+  line-height:1.1;
   color:var(--red);
-  margin:0 0 4px;
+  margin:0 0 6px;
 }
 
 .subtitle{
-  font-size:15px;
+  font-size:17px;
   font-weight:600;
   letter-spacing:0.5px;
   color:var(--pine);
@@ -161,10 +161,11 @@ h2{
 }
 
 .venue-info{
-  font-size:14px;
+  font-size:16px;
   color:var(--pine);
   opacity:0.9;
   margin-bottom:12px;
+  line-height:1.5;
 }
 
 .rule{
@@ -202,16 +203,16 @@ h2{
   display:flex;
   flex-direction:column;
   gap:4px;
-  font-size:15px;
+  font-size:16px;
   color:var(--pine);
-  padding:10px 0;
+  padding:12px 0;
   border-bottom:1px solid rgba(47,74,60,0.1);
 }
 
 .event .time{
   font-weight:700;
   color:var(--red);
-  font-size:14px;
+  font-size:15px;
   text-transform:uppercase;
   letter-spacing:0.5px;
 }
@@ -226,18 +227,18 @@ h2{
   font-weight:600;
   text-transform:uppercase;
   letter-spacing:0.5px;
-  font-size:15px;
+  font-size:16px;
 }
 
 .event .subtext{
-  font-size:14px;
+  font-size:15px;
   opacity:0.85;
 }
 
 .event .list{
   margin:4px 0 0;
   padding-left:16px;
-  font-size:14px;
+  font-size:15px;
   opacity:0.9;
 }
 
@@ -254,14 +255,14 @@ h2{
 
 .summary .big-number{
   font-family:'Yellowtail', cursive;
-  font-size:36px;
+  font-size:40px;
   color:var(--red);
   line-height:1;
   margin:0;
 }
 
 .summary .per-month{
-  font-size:17px;
+  font-size:18px;
   font-weight:700;
   color:var(--pine);
   margin:6px 0 0;
@@ -269,11 +270,11 @@ h2{
 
 .summary .per-month span{
   color:var(--red);
-  font-size:20px;
+  font-size:22px;
 }
 
 .summary .total{
-  font-size:14px;
+  font-size:15px;
   color:var(--pine);
   opacity:0.8;
   margin-top:4px;
@@ -290,7 +291,7 @@ h2{
 
 .budget-table th{
   text-align:left;
-  font-size:12px;
+  font-size:13px;
   text-transform:uppercase;
   letter-spacing:0.5px;
   color:var(--pine);
@@ -302,7 +303,7 @@ h2{
 
 .budget-table td{
   padding:10px 0;
-  font-size:14px;
+  font-size:16px;
   color:var(--pine);
   border-bottom:1px solid rgba(47,74,60,0.1);
   vertical-align:top;
@@ -317,7 +318,7 @@ h2{
 }
 
 .budget-table td .desc{
-  font-size:12px;
+  font-size:14px;
   opacity:0.7;
   font-weight:400;
   margin-top:2px;
@@ -328,12 +329,12 @@ h2{
   border-bottom:none;
   padding-top:12px;
   font-weight:700;
-  font-size:16px;
+  font-size:17px;
 }
 
 .budget-table tr.total-row td:last-child{
   color:var(--red);
-  font-size:18px;
+  font-size:19px;
 }
 
 /* ══════════════════════════════════════════
@@ -348,7 +349,7 @@ h2{
 
 .notes p{
   margin:0 0 8px;
-  font-size:14px;
+  font-size:15px;
   color:var(--pine);
   line-height:1.5;
 }
@@ -366,7 +367,7 @@ h2{
   display:flex;
   flex-direction:column;
   gap:6px;
-  font-size:14px;
+  font-size:15px;
   color:var(--pine);
 }
 
@@ -382,7 +383,7 @@ h2{
 .tagline{
   text-align:center;
   font-family:'Yellowtail', cursive;
-  font-size:28px;
+  font-size:32px;
   color:var(--red);
   margin-top:16px;
 }
@@ -406,13 +407,13 @@ h2{
 
 .game-card h3{
   font-family:'Yellowtail', cursive;
-  font-size:24px;
+  font-size:26px;
   color:var(--red);
   margin:0 0 6px;
 }
 
 .game-card p{
-  font-size:14px;
+  font-size:15px;
   color:var(--pine);
   margin:0;
   line-height:1.5;
@@ -420,13 +421,13 @@ h2{
 
 .game-card .status{
   display:inline-block;
-  font-size:11px;
+  font-size:12px;
   font-weight:700;
   letter-spacing:1px;
   text-transform:uppercase;
   color:var(--cream);
   background:var(--red);
-  padding:3px 10px;
+  padding:4px 12px;
   border-radius:4px;
   margin-top:10px;
 }
@@ -559,14 +560,14 @@ h2{
 }
 
 .payment-details h4{
-  font-size:15px;
+  font-size:17px;
   font-weight:700;
   color:var(--red);
   margin:0;
 }
 
 .payment-details p{
-  font-size:13px;
+  font-size:15px;
   color:var(--pine);
   margin:0;
   line-height:1.5;
@@ -587,13 +588,13 @@ h2{
 
 .qr-placeholder span{
   font-family:'Yellowtail', cursive;
-  font-size:16px;
+  font-size:20px;
   color:var(--pine);
   opacity:0.6;
 }
 
 .qr-placeholder small{
-  font-size:10px;
+  font-size:12px;
   color:var(--pine);
   opacity:0.5;
   margin-top:2px;
@@ -608,14 +609,14 @@ h2{
   text-decoration:line-through;
   color:rgba(47,74,60,0.5);
   font-weight:400;
-  font-size:13px;
+  font-size:14px;
 }
 
 .potluck-badge{
   display:inline-block;
   background:linear-gradient(135deg,var(--pine) 0%,#1f3a2a 100%);
   color:var(--cream);
-  font-size:12px;
+  font-size:13px;
   font-weight:700;
   letter-spacing:1px;
   padding:4px 12px;
@@ -630,7 +631,7 @@ h2{
   display:inline-block;
   background:var(--red);
   color:var(--cream);
-  font-size:12px;
+  font-size:13px;
   font-weight:700;
   letter-spacing:0.5px;
   padding:4px 10px;
@@ -643,11 +644,11 @@ h2{
 .final-price{
   font-weight:700;
   color:var(--red);
-  font-size:17px;
+  font-size:18px;
 }
 
 .savings{
-  font-size:13px;
+  font-size:14px;
   color:var(--pine);
   opacity:0.7;
   margin-top:2px;
@@ -659,7 +660,7 @@ h2{
 .discount-banner{
   background:linear-gradient(135deg,var(--red) 0%,#9a2f24 100%);
   color:var(--cream);
-  padding:14px 16px;
+  padding:16px;
   border-radius:8px;
   margin-bottom:20px;
   display:flex;
@@ -675,7 +676,7 @@ h2{
 }
 
 .discount-banner .banner-label{
-  font-size:10px;
+  font-size:12px;
   text-transform:uppercase;
   letter-spacing:1px;
   opacity:0.9;
@@ -683,12 +684,12 @@ h2{
 
 .discount-banner .banner-amount{
   font-family:'Yellowtail', cursive;
-  font-size:32px;
+  font-size:36px;
   line-height:1;
 }
 
 .discount-banner .banner-sub{
-  font-size:13px;
+  font-size:14px;
   opacity:0.85;
 }
 
