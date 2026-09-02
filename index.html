@@ -14,6 +14,32 @@
 
   <main class="page">
     <div class="card">
+      <!-- Countdown Timer -->
+      <div class="countdown">
+        <div class="countdown-label">Party countdown</div>
+        <div class="countdown-timer">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-days">--</span>
+            <span class="countdown-text">days</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-hours">--</span>
+            <span class="countdown-text">hrs</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-mins">--</span>
+            <span class="countdown-text">min</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-secs">--</span>
+            <span class="countdown-text">sec</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Pine Sprig Illustration -->
       <svg class="sprig" viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg">
         <path d="M60 150 C60 100 55 60 60 10" fill="none" stroke="#2f4a3c" stroke-width="2.5" stroke-linecap="round"/>
@@ -193,6 +219,33 @@
     <a href="games.html" class="tab">Games</a>
     <a href="gallery.html" class="tab">Gallery</a>
   </nav>
+
+  <script>
+    (function(){
+      const partyDate = new Date('December 25, 2026 18:00:00').getTime();
+      function update(){
+        const now = new Date().getTime();
+        const diff = partyDate - now;
+        if(diff <= 0){
+          document.getElementById('cd-days').textContent = '🎉';
+          document.getElementById('cd-hours').textContent = 'IT\'S';
+          document.getElementById('cd-mins').textContent = 'PARTY';
+          document.getElementById('cd-secs').textContent = 'TIME';
+          return;
+        }
+        const days = Math.floor(diff / (1000*60*60*24));
+        const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+        const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+        const secs = Math.floor((diff % (1000*60)) / 1000);
+        document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+        document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+        document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+      }
+      update();
+      setInterval(update, 1000);
+    })();
+  </script>
 
 </body>
 </html>
