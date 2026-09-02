@@ -2,378 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pascual's 80's Christmas Party — 1986</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Yellowtail&family=Josefin+Sans:wght@400;500;600;700&display=swap');
-
-  :root{
-    --cream:#f3ead9;
-    --red:#b23a2e;
-    --pine:#2f4a3c;
-    --tab-inactive:rgba(47,74,60,0.08);
-  }
-
-  *{box-sizing:border-box;}
-
-  body{
-    margin:0;
-    background:#1b1b1b;
-    font-family:'Josefin Sans', sans-serif;
-    display:flex;
-    justify-content:center;
-    padding:56px 16px;
-  }
-
-  .card{
-    width:100%;
-    max-width:680px;
-    background:var(--cream);
-    position:relative;
-    padding:52px 48px;
-    display:flex;
-    flex-direction:column;
-    box-shadow:0 24px 60px rgba(0,0,0,0.5);
-  }
-
-  /* SVG Pine Sprig Header Decorative Element */
-  .sprig{
-    position:absolute;
-    top:44px;
-    right:44px;
-    width:110px;
-    height:140px;
-  }
-
-  .eyebrow{
-    font-size:12px;
-    letter-spacing:2.5px;
-    text-transform:uppercase;
-    color:var(--pine);
-    margin:0 0 20px;
-  }
-
-  /* Header / Title Section */
-  .title-block{
-    margin-bottom:20px;
-  }
-
-  h1{
-    font-family:'Yellowtail', cursive;
-    font-size:52px;
-    line-height:1;
-    color:var(--red);
-    margin:0 0 4px;
-  }
-
-  .subtitle{
-    font-size:16px;
-    font-weight:600;
-    letter-spacing:1px;
-    color:var(--pine);
-    margin:0 0 10px;
-    text-transform:uppercase;
-  }
-
-  .venue-info{
-    font-size:14px;
-    color:var(--pine);
-    opacity:0.9;
-    margin-bottom:16px;
-  }
-
-  .rule{
-    width:56px;
-    height:2px;
-    background:var(--pine);
-    margin:0 0 20px;
-  }
-
-  /* Tabs */
-  .tabs{
-    display:flex;
-    gap:8px;
-    margin-bottom:24px;
-    border-bottom:1px solid rgba(47,74,60,0.2);
-    padding-bottom:0;
-  }
-
-  .tab{
-    flex:1;
-    padding:10px 16px;
-    background:var(--tab-inactive);
-    border:none;
-    border-radius:8px 8px 0 0;
-    font-family:'Josefin Sans', sans-serif;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    color:var(--pine);
-    cursor:pointer;
-    transition:all 0.2s ease;
-  }
-
-  .tab:hover{
-    background:rgba(47,74,60,0.15);
-  }
-
-  .tab.active{
-    background:var(--red);
-    color:var(--cream);
-  }
-
-  .tab-content{
-    display:none;
-  }
-
-  .tab-content.active{
-    display:flex;
-    flex-direction:column;
-  }
-
-  /* Schedule Styles */
-  .section-title{
-    font-size:14px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    color:var(--red);
-    border-bottom:1px solid rgba(47,74,60,0.3);
-    padding-bottom:4px;
-    margin:16px 0 12px;
-  }
-
-  .timeline{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    margin-bottom:8px;
-  }
-
-  .event{
-    display:flex;
-    gap:16px;
-    font-size:13.5px;
-    color:var(--pine);
-  }
-
-  .event .time{
-    width:130px;
-    flex-shrink:0;
-    font-weight:600;
-    color:var(--red);
-    line-height:1.3;
-  }
-
-  .event .details{
-    display:flex;
-    flex-direction:column;
-    gap:2px;
-  }
-
-  .event .title-text{
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
-  }
-
-  .event .subtext{
-    font-size:12.5px;
-    opacity:0.85;
-  }
-
-  .event .list{
-    margin:4px 0 0;
-    padding-left:16px;
-    font-size:12.5px;
-    opacity:0.9;
-  }
-
-  /* Summary Box */
-  .summary{
-    background:rgba(47,74,60,0.08);
-    border-left:3px solid var(--red);
-    padding:20px 24px;
-    margin-bottom:28px;
-    border-radius:0 8px 8px 0;
-  }
-
-  .summary .big-number{
-    font-family:'Yellowtail', cursive;
-    font-size:42px;
-    color:var(--red);
-    line-height:1;
-    margin:0;
-  }
-
-  .summary .per-month{
-    font-size:18px;
-    font-weight:700;
-    color:var(--pine);
-    margin:8px 0 0;
-  }
-
-  .summary .per-month span{
-    color:var(--red);
-    font-size:22px;
-  }
-
-  .summary .total{
-    font-size:14px;
-    color:var(--pine);
-    opacity:0.8;
-    margin-top:6px;
-  }
-
-  /* Budget Table */
-  .budget-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-bottom:28px;
-  }
-
-  .budget-table th{
-    text-align:left;
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    color:var(--pine);
-    padding:8px 0;
-    border-bottom:1px solid rgba(47,74,60,0.2);
-  }
-
-  .budget-table th:last-child{
-    text-align:right;
-  }
-
-  .budget-table td{
-    padding:10px 0;
-    font-size:14px;
-    color:var(--pine);
-    border-bottom:1px solid rgba(47,74,60,0.1);
-    vertical-align:top;
-  }
-
-  .budget-table td:last-child{
-    text-align:right;
-    font-weight:600;
-    color:var(--red);
-    white-space:nowrap;
-  }
-
-  .budget-table td .desc{
-    font-size:12px;
-    opacity:0.7;
-    font-weight:400;
-  }
-
-  .budget-table tr.total-row td{
-    border-top:2px solid var(--pine);
-    border-bottom:none;
-    padding-top:14px;
-    font-weight:700;
-    font-size:16px;
-  }
-
-  .budget-table tr.total-row td:last-child{
-    color:var(--red);
-    font-size:18px;
-  }
-
-  /* Payment Notes */
-  .notes{
-    background:rgba(47,74,60,0.05);
-    border-radius:8px;
-    padding:16px 20px;
-    margin-bottom:24px;
-  }
-
-  .notes p{
-    margin:0 0 8px;
-    font-size:13px;
-    color:var(--pine);
-    line-height:1.5;
-  }
-
-  .notes p:last-child{
-    margin-bottom:0;
-  }
-
-  .notes strong{
-    color:var(--red);
-  }
-
-  /* Footer Section */
-  .party-footer{
-    margin-top:20px;
-    border-top:1px solid rgba(47,74,60,0.3);
-    padding-top:16px;
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-    font-size:13px;
-    color:var(--pine);
-  }
-
-  .party-footer .row{
-    display:flex;
-    gap:10px;
-  }
-
-  .party-footer .k{
-    width:80px;
-    flex-shrink:0;
-    font-weight:600;
-    color:var(--red);
-  }
-
-  .tagline{
-    text-align:center;
-    font-family:'Yellowtail', cursive;
-    font-size:32px;
-    color:var(--red);
-    margin-top:20px;
-  }
-</style>
+<title>Program — Pascual's 80's Christmas Party 1986</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <div class="card">
-    <!-- Pine Sprig Illustration -->
-    <svg class="sprig" viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M60 150 C60 100 55 60 60 10" fill="none" stroke="#2f4a3c" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M60 40 C40 30 28 16 22 4" fill="none" stroke="#2f4a3c" stroke-width="2" stroke-linecap="round"/>
-      <path d="M60 60 C82 50 96 34 104 20" fill="none" stroke="#2f4a3c" stroke-width="2" stroke-linecap="round"/>
-      <path d="M60 82 C40 74 26 60 18 48" fill="none" stroke="#2f4a3c" stroke-width="2" stroke-linecap="round"/>
-      <path d="M60 100 C80 92 92 78 100 66" fill="none" stroke="#2f4a3c" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="24" cy="6" r="4" fill="#b23a2e"/>
-      <circle cx="106" cy="22" r="4" fill="#b23a2e"/>
-      <circle cx="16" cy="50" r="4" fill="#b23a2e"/>
-      <circle cx="102" cy="68" r="4" fill="#b23a2e"/>
-      <circle cx="60" cy="10" r="4" fill="#b23a2e"/>
-    </svg>
+  <nav class="navbar">
+    <a href="index.html" class="brand">Pascual's 80's</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Program</a></li>
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <p class="eyebrow">Program of Activities</p>
+  <main class="page">
+    <div class="card">
+      <!-- Pine Sprig Illustration -->
+      <svg class="sprig" viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 150 C60 100 55 60 60 10" fill="none" stroke="#2f4a3c" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M60 40 C40 30 28 16 22 4" fill="none" stroke="#2f4a3c" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 60 C82 50 96 34 104 20" fill="none" stroke="#2f4a3c" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 82 C40 74 26 60 18 48" fill="none" stroke="#2f4a3c" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 100 C80 92 92 78 100 66" fill="none" stroke="#2f4a3c" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="24" cy="6" r="4" fill="#b23a2e"/>
+        <circle cx="106" cy="22" r="4" fill="#b23a2e"/>
+        <circle cx="16" cy="50" r="4" fill="#b23a2e"/>
+        <circle cx="102" cy="68" r="4" fill="#b23a2e"/>
+        <circle cx="60" cy="10" r="4" fill="#b23a2e"/>
+      </svg>
 
-    <!-- Header Section -->
-    <div class="title-block">
-      <h1>Pascual's 80's Christmas Party</h1>
-      <div class="subtitle">"Back to the 80's: Neon Lights & Family Nights"</div>
-      <div class="venue-info">
-        <strong>December 25–26, 1986</strong> &nbsp;|&nbsp; Texon's Cabin Resort and Events Place
+      <p class="eyebrow">Program of Activities</p>
+
+      <div class="title-block">
+        <h1>Pascual's 80's Christmas Party</h1>
+        <div class="subtitle">"Back to the 80's: Neon Lights & Family Nights"</div>
+        <div class="venue-info">
+          <strong>December 25–26, 1986</strong> &nbsp;|&nbsp; Texon's Cabin Resort and Events Place
+        </div>
       </div>
-    </div>
 
-    <div class="rule"></div>
-
-    <!-- Tabs -->
-    <div class="tabs">
-      <button class="tab active" data-tab="program">Program</button>
-      <button class="tab" data-tab="budget">Budget</button>
-    </div>
-
-    <!-- Program Tab -->
-    <div class="tab-content active" id="program">
+      <div class="rule"></div>
 
       <!-- Day 1 Schedule -->
       <div class="section-title">Day 1: December 25, 1986</div>
@@ -487,149 +158,9 @@
         <div class="row"><span class="k">Dress Code</span><span>80's Neon, Leg Warmers, Big Hair</span></div>
       </div>
 
+      <div class="tagline">Let's Party Like It's 1986!</div>
     </div>
-
-    <!-- Budget Tab -->
-    <div class="tab-content" id="budget">
-
-      <!-- Summary -->
-      <div class="summary">
-        <p class="big-number">6 Families × 4 Months</p>
-        <p class="per-month">₱833 <span>per family per month</span></p>
-        <p class="total">Total Budget: ₱20,000.00 &nbsp;|&nbsp; ₱3,333 per family overall</p>
-      </div>
-
-      <!-- Budget Breakdown Table -->
-      <div class="section-title">Budget Breakdown</div>
-
-      <table class="budget-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Estimated Cost</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Venue Rental
-              <div class="desc">Texon's Cabin Resort — 2 days, overnight use of event space, pool area, and overnight accommodations</div>
-            </td>
-            <td>₱6,000</td>
-          </tr>
-          <tr>
-            <td>
-              Food & Beverages
-              <div class="desc">Day 1 Dinner, Welcome Drinks & Snacks · Day 2 Breakfast · Bottled water & beverages throughout</div>
-            </td>
-            <td>₱7,000</td>
-          </tr>
-          <tr>
-            <td>
-              80's Decorations
-              <div class="desc">Neon signage, streamers, balloons, table centerpieces, photo backdrop, 80's movie posters, string lights</div>
-            </td>
-            <td>₱2,500</td>
-          </tr>
-          <tr>
-            <td>
-              Neon Welcome Kits
-              <div class="desc">Leg warmers, neon sunglasses, slap bracelets, temporary tattoos — one set per guest</div>
-            </td>
-            <td>₱1,500</td>
-          </tr>
-          <tr>
-            <td>
-              Prizes & Awards
-              <div class="desc">Raffle prizes · Best Dressed 80's · Most Spirited · Game winners</div>
-            </td>
-            <td>₱1,500</td>
-          </tr>
-          <tr>
-            <td>
-              Photobooth & Activities
-              <div class="desc">Props, printed photos, game materials, sound system for disco</div>
-            </td>
-            <td>₱1,000</td>
-          </tr>
-          <tr>
-            <td>
-              Contingency
-              <div class="desc">Buffer for unexpected costs, last-minute additions</div>
-            </td>
-            <td>₱500</td>
-          </tr>
-          <tr class="total-row">
-            <td>Total</td>
-            <td>₱20,000</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- Contribution Schedule -->
-      <div class="section-title">Contribution Schedule</div>
-
-      <div class="timeline">
-        <div class="event">
-          <div class="time">September</div>
-          <div class="details">
-            <div class="title-text">₱833 per family</div>
-            <div class="subtext">First installment — venue deposit & reservation</div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="time">October</div>
-          <div class="details">
-            <div class="title-text">₱833 per family</div>
-            <div class="subtext">Second installment — food & beverage booking</div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="time">November</div>
-          <div class="details">
-            <div class="title-text">₱833 per family</div>
-            <div class="subtext">Third installment — decorations, kits, prizes</div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="time">December</div>
-          <div class="details">
-            <div class="title-text">₱834 per family</div>
-            <div class="subtext">Final installment — activities, contingency, final payments</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Payment Notes -->
-      <div class="notes">
-        <p><strong>Payment Deadline:</strong> 15th of each month (Sep 15, Oct 15, Nov 15, Dec 15)</p>
-        <p><strong>Collected by:</strong> [Family Head / Treasurer name TBD]</p>
-        <p><strong>Note:</strong> The ₱1 difference in December (₱834 vs ₱833) covers the rounding to hit exactly ₱20,000. Each family's total contribution is ₱3,333 for the full 4 months.</p>
-      </div>
-
-      <div class="party-footer">
-        <div class="row"><span class="k">Total per family</span><span>₱3,333 (Sep–Dec)</span></div>
-        <div class="row"><span class="k">Monthly</span><span>₱833/month (Dec: ₱834)</span></div>
-        <div class="row"><span class="k">Families</span><span>6</span></div>
-      </div>
-
-    </div>
-
-    <div class="tagline">Let's Party Like It's 1986!</div>
-  </div>
-
-  <script>
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Remove active from all tabs and contents
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        // Add active to clicked tab and corresponding content
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.tab).classList.add('active');
-      });
-    });
-  </script>
+  </main>
 
 </body>
 </html>
