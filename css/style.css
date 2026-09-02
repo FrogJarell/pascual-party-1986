@@ -126,7 +126,7 @@ body{
    TYPOGRAPHY — Mobile First
    ══════════════════════════════════════════ */
 .eyebrow{
-  font-size:11px;
+  font-size:13px;
   letter-spacing:2px;
   text-transform:uppercase;
   color:var(--pine);
@@ -137,7 +137,7 @@ body{
 
 h1{
   font-family:'Yellowtail', cursive;
-  font-size:36px;
+  font-size:42px;
   line-height:1;
   color:var(--red);
   margin:0 0 4px;
@@ -145,14 +145,14 @@ h1{
 
 h2{
   font-family:'Yellowtail', cursive;
-  font-size:28px;
+  font-size:32px;
   line-height:1;
   color:var(--red);
   margin:0 0 4px;
 }
 
 .subtitle{
-  font-size:13px;
+  font-size:15px;
   font-weight:600;
   letter-spacing:0.5px;
   color:var(--pine);
@@ -161,7 +161,7 @@ h2{
 }
 
 .venue-info{
-  font-size:13px;
+  font-size:14px;
   color:var(--pine);
   opacity:0.9;
   margin-bottom:12px;
@@ -178,7 +178,7 @@ h2{
    SECTION TITLE
    ══════════════════════════════════════════ */
 .section-title{
-  font-size:12px;
+  font-size:14px;
   font-weight:700;
   letter-spacing:1px;
   text-transform:uppercase;
@@ -202,7 +202,7 @@ h2{
   display:flex;
   flex-direction:column;
   gap:4px;
-  font-size:14px;
+  font-size:15px;
   color:var(--pine);
   padding:10px 0;
   border-bottom:1px solid rgba(47,74,60,0.1);
@@ -211,7 +211,7 @@ h2{
 .event .time{
   font-weight:700;
   color:var(--red);
-  font-size:13px;
+  font-size:14px;
   text-transform:uppercase;
   letter-spacing:0.5px;
 }
@@ -226,18 +226,18 @@ h2{
   font-weight:600;
   text-transform:uppercase;
   letter-spacing:0.5px;
-  font-size:14px;
+  font-size:15px;
 }
 
 .event .subtext{
-  font-size:13px;
+  font-size:14px;
   opacity:0.85;
 }
 
 .event .list{
   margin:4px 0 0;
   padding-left:16px;
-  font-size:13px;
+  font-size:14px;
   opacity:0.9;
 }
 
@@ -247,21 +247,21 @@ h2{
 .summary{
   background:rgba(47,74,60,0.08);
   border-left:3px solid var(--red);
-  padding:16px 16px;
+  padding:20px 16px;
   margin-bottom:20px;
   border-radius:0 8px 8px 0;
 }
 
 .summary .big-number{
   font-family:'Yellowtail', cursive;
-  font-size:28px;
+  font-size:36px;
   color:var(--red);
   line-height:1;
   margin:0;
 }
 
 .summary .per-month{
-  font-size:15px;
+  font-size:17px;
   font-weight:700;
   color:var(--pine);
   margin:6px 0 0;
@@ -269,11 +269,11 @@ h2{
 
 .summary .per-month span{
   color:var(--red);
-  font-size:18px;
+  font-size:20px;
 }
 
 .summary .total{
-  font-size:12px;
+  font-size:14px;
   color:var(--pine);
   opacity:0.8;
   margin-top:4px;
@@ -290,7 +290,7 @@ h2{
 
 .budget-table th{
   text-align:left;
-  font-size:11px;
+  font-size:12px;
   text-transform:uppercase;
   letter-spacing:0.5px;
   color:var(--pine);
@@ -302,7 +302,7 @@ h2{
 
 .budget-table td{
   padding:10px 0;
-  font-size:13px;
+  font-size:14px;
   color:var(--pine);
   border-bottom:1px solid rgba(47,74,60,0.1);
   vertical-align:top;
@@ -317,7 +317,7 @@ h2{
 }
 
 .budget-table td .desc{
-  font-size:11px;
+  font-size:12px;
   opacity:0.7;
   font-weight:400;
   margin-top:2px;
@@ -328,12 +328,12 @@ h2{
   border-bottom:none;
   padding-top:12px;
   font-weight:700;
-  font-size:15px;
+  font-size:16px;
 }
 
 .budget-table tr.total-row td:last-child{
   color:var(--red);
-  font-size:17px;
+  font-size:18px;
 }
 
 /* ══════════════════════════════════════════
@@ -348,7 +348,7 @@ h2{
 
 .notes p{
   margin:0 0 8px;
-  font-size:13px;
+  font-size:14px;
   color:var(--pine);
   line-height:1.5;
 }
@@ -366,7 +366,7 @@ h2{
   display:flex;
   flex-direction:column;
   gap:6px;
-  font-size:13px;
+  font-size:14px;
   color:var(--pine);
 }
 
@@ -382,7 +382,7 @@ h2{
 .tagline{
   text-align:center;
   font-family:'Yellowtail', cursive;
-  font-size:24px;
+  font-size:28px;
   color:var(--red);
   margin-top:16px;
 }
@@ -406,13 +406,13 @@ h2{
 
 .game-card h3{
   font-family:'Yellowtail', cursive;
-  font-size:22px;
+  font-size:24px;
   color:var(--red);
   margin:0 0 6px;
 }
 
 .game-card p{
-  font-size:13px;
+  font-size:14px;
   color:var(--pine);
   margin:0;
   line-height:1.5;
@@ -608,17 +608,17 @@ h2{
   text-decoration:line-through;
   color:rgba(47,74,60,0.5);
   font-weight:400;
-  font-size:12px;
+  font-size:13px;
 }
 
 .potluck-badge{
   display:inline-block;
   background:linear-gradient(135deg,var(--pine) 0%,#1f3a2a 100%);
   color:var(--cream);
-  font-size:11px;
+  font-size:12px;
   font-weight:700;
   letter-spacing:1px;
-  padding:3px 10px;
+  padding:4px 12px;
   border-radius:4px;
   margin-left:6px;
   vertical-align:middle;
@@ -630,10 +630,10 @@ h2{
   display:inline-block;
   background:var(--red);
   color:var(--cream);
-  font-size:11px;
+  font-size:12px;
   font-weight:700;
   letter-spacing:0.5px;
-  padding:3px 8px;
+  padding:4px 10px;
   border-radius:4px;
   margin-left:6px;
   vertical-align:middle;
@@ -643,11 +643,11 @@ h2{
 .final-price{
   font-weight:700;
   color:var(--red);
-  font-size:15px;
+  font-size:17px;
 }
 
 .savings{
-  font-size:11px;
+  font-size:13px;
   color:var(--pine);
   opacity:0.7;
   margin-top:2px;
@@ -683,12 +683,12 @@ h2{
 
 .discount-banner .banner-amount{
   font-family:'Yellowtail', cursive;
-  font-size:26px;
+  font-size:32px;
   line-height:1;
 }
 
 .discount-banner .banner-sub{
-  font-size:11px;
+  font-size:13px;
   opacity:0.85;
 }
 
@@ -705,7 +705,7 @@ h2{
   padding:6px 12px;
   border-radius:6px;
   font-weight:700;
-  font-size:12px;
+  font-size:14px;
   letter-spacing:0.5px;
   text-transform:uppercase;
   white-space:nowrap;
