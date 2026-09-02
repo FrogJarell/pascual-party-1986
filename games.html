@@ -40,11 +40,65 @@
 
       <div class="rule"></div>
 
-      <div class="section-title">Games</div>
-      <div class="notes">
-        <p><em>Game line-up is being finalized. Each family is encouraged to contribute 1 game — stay tuned for updates!</em></p>
+      <!-- MAIN GAMES -->
+      <div class="section-title">Main Games (Host-Organized)</div>
+
+      <!-- Timer Challenge -->
+      <div class="game-card">
+        <h3>Timer Challenge</h3>
+        <p class="game-desc">Two players. One goal time. No looking!</p>
+        <div class="game-rules">
+          <p><strong>How it works:</strong></p>
+          <ul>
+            <li>Host sets a secret goal time (e.g., 4 seconds)</li>
+            <li>Each player has a buzzer — press when you THINK the time is up</li>
+            <li>You CANNOT see the timer!</li>
+            <li>Closest to the goal time wins the round</li>
+          </ul>
+        </div>
       </div>
 
+      <!-- Interactive Timer Simulation -->
+      <div class="timer-game" id="timer-game">
+        <div class="timer-header">
+          <h4>🎮 Try the Timer Challenge!</h4>
+          <p class="timer-sub">Press STOP as close to the target time as you can</p>
+        </div>
+
+        <div class="timer-display">
+          <div class="timer-target">
+            <span class="timer-label">Target</span>
+            <span class="timer-value" id="timer-target">5.00s</span>
+          </div>
+          <div class="timer-current">
+            <span class="timer-label">Elapsed</span>
+            <span class="timer-value" id="timer-elapsed">0.00s</span>
+          </div>
+        </div>
+
+        <div class="timer-status" id="timer-status">Press START to begin!</div>
+
+        <div class="timer-controls">
+          <button class="timer-btn timer-btn-start" id="timer-start" onclick="timerStart()">START</button>
+          <button class="timer-btn timer-btn-stop" id="timer-stop" onclick="timerStop()" disabled>STOP</button>
+        </div>
+
+        <div class="timer-result" id="timer-result" style="display:none;">
+          <div class="timer-result-label">Your time:</div>
+          <div class="timer-result-value" id="timer-result-value">0.00s</div>
+          <div class="timer-result-diff" id="timer-result-diff"></div>
+        </div>
+
+        <button class="timer-btn timer-btn-reset" id="timer-reset" onclick="timerReset()" style="display:none;">PLAY AGAIN</button>
+      </div>
+
+      <!-- OTHER GAMES -->
+      <div class="section-title">Other Games (Family-Contributed)</div>
+      <div class="notes">
+        <p><em>Each family is encouraged to contribute 1 game! Stay tuned for updates.</em></p>
+      </div>
+
+      <!-- AWARDS -->
       <div class="section-title">Awards</div>
       <div class="timeline">
         <div class="event">
@@ -82,6 +136,60 @@
     <a href="games.html" class="tab active">Games</a>
     <a href="gallery.html" class="tab">Gallery</a>
   </nav>
+
+  <script>
+    let timerStartTime = null;
+    let timerInterval = null;
+    let timerTarget = 5.0;
+    let timerRunning = false;
+
+    function timerStart(){
+      timerStartTime = Date.now();
+      timerRunning = true;
+      document.getElementById('timer-start').disabled = true;
+      document.getElementById('timer-stop').disabled = false;
+      document.getElementById('timer-status').textContent = 'Timer running... press STOP at the right moment!';
+      document.getElementById('timer-result').style.display = 'none';
+      document.getElementById('timer-reset').style.display = 'none';
+      timerInterval = setInterval(function(){
+        const elapsed = (Date.now() - timerStartTime) / 1000;
+        document.getElementById('timer-elapsed').textContent = elapsed.toFixed(2) + 's';
+      }, 50);
+    }
+
+    function timerStop(){
+      if(!timerRunning) return;
+      clearInterval(timerInterval);
+      timerRunning = false;
+      const elapsed = (Date.now() - timerStartTime) / 1000;
+      const diff = Math.abs(elapsed - timerTarget);
+      document.getElementById('timer-stop').disabled = true;
+      document.getElementById('timer-result').style.display = 'block';
+      document.getElementById('timer-result-value').textContent = elapsed.toFixed(2) + 's';
+      let diffText = '';
+      if(diff < 0.3) diffText = '🔥 INCREDIBLE! Almost perfect!';
+      else if(diff < 0.8) diffText = '👏 Great timing!';
+      else if(diff < 1.5) diffText = '👍 Not bad!';
+      else diffText = '😅 Keep practicing!';
+      document.getElementById('timer-result-diff').textContent = diffText + ' (off by ' + diff.toFixed(2) + 's)';
+      document.getElementById('timer-reset').style.display = 'inline-block';
+    }
+
+    function timerReset(){
+      clearInterval(timerInterval);
+      timerRunning = false;
+      timerStartTime = null;
+      document.getElementById('timer-elapsed').textContent = '0.00s';
+      document.getElementById('timer-status').textContent = 'Press START to begin!';
+      document.getElementById('timer-start').disabled = false;
+      document.getElementById('timer-stop').disabled = true;
+      document.getElementById('timer-result').style.display = 'none';
+      document.getElementById('timer-reset').style.display = 'none';
+      // Randomize target between 3-8 seconds
+      timerTarget = Math.round((Math.random() * 5 + 3) * 10) / 10;
+      document.getElementById('timer-target').textContent = timerTarget.toFixed(2) + 's';
+    }
+  </script>
 
 </body>
 </html>
