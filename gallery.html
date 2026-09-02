@@ -31,29 +31,71 @@
       <p class="eyebrow">Gallery</p>
 
       <div class="title-block">
-        <h1>Photos & Memories</h1>
-        <div class="subtitle">Coming Soon</div>
+        <h1>Venue Showcase</h1>
+        <div class="subtitle">Texon's Cabin Resort and Events Place</div>
         <div class="venue-info">
-          After the party, we'll upload all the photos here — photobooth pics, group shots, and all the 80's moments!
+          Where the magic happens — December 25-26
         </div>
       </div>
 
       <div class="rule"></div>
 
-      <div class="gallery-grid">
-        <div class="gallery-item"><span>📸 Photobooth</span></div>
-        <div class="gallery-item"><span>📸 Group Photo</span></div>
-        <div class="gallery-item"><span>📸 Games</span></div>
-        <div class="gallery-item"><span>📸 Disco</span></div>
+      <!-- Venue Link -->
+      <div class="venue-link">
+        <img src="images/gallery/venue-profile.jpg" alt="Venue Profile" class="venue-profile-img">
+        <div class="venue-info-text">
+          <h4>Texon's Cabin Resort and Events Place</h4>
+          <p>Follow their page for updates and more photos</p>
+          <a href="https://www.facebook.com/profile.php?id=61585690243774" target="_blank" class="venue-fb-link">Visit on Facebook →</a>
+        </div>
       </div>
 
-      <div class="notes">
-        <p><strong>Note:</strong> This gallery will be updated after the party on December 25–26. Check back in January 1987!</p>
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue1.jpg')">
+          <img src="images/gallery/venue1.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue2.jpg')">
+          <img src="images/gallery/venue2.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue3.jpg')">
+          <img src="images/gallery/venue3.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue4.jpg')">
+          <img src="images/gallery/venue4.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue5.jpg')">
+          <img src="images/gallery/venue5.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue6.jpg')">
+          <img src="images/gallery/venue6.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue7.jpg')">
+          <img src="images/gallery/venue7.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue8.jpg')">
+          <img src="images/gallery/venue8.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue9.jpg')">
+          <img src="images/gallery/venue9.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue10.jpg')">
+          <img src="images/gallery/venue10.jpg" alt="Venue" class="gallery-img">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery/venue11.jpg')">
+          <img src="images/gallery/venue11.jpg" alt="Venue" class="gallery-img">
+        </div>
       </div>
 
       <div class="tagline">Let's Party Like It's 1986!</div>
     </div>
   </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img src="" alt="Full size" class="lightbox-img" id="lightbox-img">
+  </div>
 
   <!-- Bottom Tab Bar Navigation -->
   <nav class="bottom-nav">
@@ -63,6 +105,21 @@
     <a href="games.html" class="tab">Games</a>
     <a href="gallery.html" class="tab active">Gallery</a>
   </nav>
+
+  <script>
+    function openLightbox(src){
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(){
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
