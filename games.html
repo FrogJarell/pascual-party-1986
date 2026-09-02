@@ -71,8 +71,8 @@
             <span class="timer-value" id="timer-target">5.00s</span>
           </div>
           <div class="timer-current">
-            <span class="timer-label">Elapsed</span>
-            <span class="timer-value" id="timer-elapsed">0.00s</span>
+            <span class="timer-label">Your Time</span>
+            <span class="timer-value" id="timer-elapsed">--</span>
           </div>
         </div>
 
@@ -148,22 +148,19 @@
       timerRunning = true;
       document.getElementById('timer-start').disabled = true;
       document.getElementById('timer-stop').disabled = false;
-      document.getElementById('timer-status').textContent = 'Timer running... press STOP at the right moment!';
+      document.getElementById('timer-status').textContent = 'Count in your head... press STOP at the right moment!';
+      document.getElementById('timer-elapsed').textContent = '--';
       document.getElementById('timer-result').style.display = 'none';
       document.getElementById('timer-reset').style.display = 'none';
-      timerInterval = setInterval(function(){
-        const elapsed = (Date.now() - timerStartTime) / 1000;
-        document.getElementById('timer-elapsed').textContent = elapsed.toFixed(2) + 's';
-      }, 50);
     }
 
     function timerStop(){
       if(!timerRunning) return;
-      clearInterval(timerInterval);
       timerRunning = false;
       const elapsed = (Date.now() - timerStartTime) / 1000;
       const diff = Math.abs(elapsed - timerTarget);
       document.getElementById('timer-stop').disabled = true;
+      document.getElementById('timer-elapsed').textContent = elapsed.toFixed(2) + 's';
       document.getElementById('timer-result').style.display = 'block';
       document.getElementById('timer-result-value').textContent = elapsed.toFixed(2) + 's';
       let diffText = '';
