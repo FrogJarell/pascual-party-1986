@@ -186,12 +186,12 @@ body{
   margin:0 0 8px;
 }
 
-.title-block{ margin-bottom:12px; }
+.title-block{ margin-bottom:12px; text-align:center; }
 
 h1{
   font-family:'Yellowtail', cursive;
-  font-size:36px;
-  line-height:1.1;
+  font-size:30px;
+  line-height:1.05;
   color:var(--red);
   margin:0 0 4px;
 }
@@ -824,7 +824,7 @@ h2{
     height:140px;
   }
 
-  h1{ font-size:52px; }
+  h1{ font-size:48px; line-height:1; }
   h2{ font-size:38px; }
 
   .subtitle{ font-size:16px; }
