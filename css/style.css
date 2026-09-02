@@ -1,4 +1,4 @@
-/* Pascual's 80's Christmas Party — Mobile-First Stylesheet */
+/* Pascual's 80's Christmas Party — Mobile-First Professional Stylesheet */
 
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&family=Josefin+Sans:wght@400;500;600;700&display=swap');
 
@@ -18,12 +18,13 @@ body{
   display:flex;
   flex-direction:column;
   min-height:100vh;
-  /* Prevent horizontal scroll */
   overflow-x:hidden;
+  /* Space for bottom nav */
+  padding-bottom:68px;
 }
 
 /* ══════════════════════════════════════════
-   TOP NAVIGATION — Mobile First
+   TOP BRAND BAR — Mobile
    ══════════════════════════════════════════ */
 .navbar{
   background:var(--cream);
@@ -31,8 +32,8 @@ body{
   padding:0 16px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  height:56px;
+  justify-content:center;
+  height:48px;
   position:sticky;
   top:0;
   z-index:100;
@@ -40,56 +41,62 @@ body{
 
 .navbar .brand{
   font-family:'Yellowtail', cursive;
-  font-size:22px;
+  font-size:24px;
   color:var(--red);
   text-decoration:none;
   white-space:nowrap;
-  flex-shrink:0;
 }
 
-/* Horizontal scroll nav on mobile */
-.navbar .nav-links{
+/* ══════════════════════════════════════════
+   BOTTOM TAB BAR — Mobile (Primary Nav)
+   ══════════════════════════════════════════ */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:var(--cream);
+  border-top:2px solid var(--red);
   display:flex;
-  gap:4px;
-  list-style:none;
-  margin:0;
-  padding:0;
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none; /* Firefox */
-  flex-shrink:1;
-  justify-content:flex-end;
+  justify-content:space-around;
+  align-items:center;
+  height:68px;
+  z-index:100;
+  padding:0 4px;
 }
 
-.navbar .nav-links::-webkit-scrollbar{
-  display:none; /* Chrome/Safari */
-}
-
-.navbar .nav-links li{
-  flex-shrink:0;
-}
-
-.navbar .nav-links a{
-  display:block;
-  padding:8px 14px;
-  font-size:12px;
+.bottom-nav .tab{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+  flex:1;
+  height:100%;
+  text-decoration:none;
+  color:var(--pine);
+  font-size:10px;
   font-weight:600;
   letter-spacing:0.5px;
   text-transform:uppercase;
-  color:var(--pine);
-  text-decoration:none;
-  border-radius:6px;
+  padding:8px 0;
   transition:all 0.2s ease;
-  white-space:nowrap;
+  border-radius:8px;
+  margin:4px 2px;
 }
 
-.navbar .nav-links a:hover{
-  background:rgba(47,74,60,0.1);
+.bottom-nav .tab:hover{
+  background:rgba(47,74,60,0.08);
 }
 
-.navbar .nav-links a.active{
-  background:var(--red);
-  color:var(--cream);
+.bottom-nav .tab.active{
+  color:var(--red);
+  background:rgba(178,58,46,0.08);
+}
+
+.bottom-nav .tab .icon{
+  font-size:20px;
+  line-height:1;
 }
 
 /* ══════════════════════════════════════════
@@ -99,7 +106,7 @@ body{
   flex:1;
   display:flex;
   justify-content:center;
-  padding:24px 12px;
+  padding:20px 12px;
 }
 
 .card{
@@ -107,7 +114,7 @@ body{
   max-width:680px;
   background:var(--cream);
   position:relative;
-  padding:32px 20px;
+  padding:28px 16px;
   display:flex;
   flex-direction:column;
   box-shadow:0 24px 60px rgba(0,0,0,0.5);
@@ -116,105 +123,105 @@ body{
 /* ── Pine Sprig ── */
 .sprig{
   position:absolute;
-  top:20px;
-  right:20px;
-  width:70px;
-  height:90px;
+  top:16px;
+  right:16px;
+  width:60px;
+  height:75px;
 }
 
 /* ══════════════════════════════════════════
-   TYPOGRAPHY — Mobile First (readable portrait)
+   TYPOGRAPHY — Mobile First
    ══════════════════════════════════════════ */
 .eyebrow{
-  font-size:14px;
-  letter-spacing:2px;
+  font-size:12px;
+  letter-spacing:1.5px;
   text-transform:uppercase;
   color:var(--pine);
-  margin:0 0 12px;
+  margin:0 0 8px;
 }
 
-.title-block{ margin-bottom:16px; }
+.title-block{ margin-bottom:12px; }
 
 h1{
-  font-family:'Yellowtail', cursive;
-  font-size:48px;
-  line-height:1.1;
-  color:var(--red);
-  margin:0 0 6px;
-}
-
-h2{
   font-family:'Yellowtail', cursive;
   font-size:36px;
   line-height:1.1;
   color:var(--red);
-  margin:0 0 6px;
+  margin:0 0 4px;
+}
+
+h2{
+  font-family:'Yellowtail', cursive;
+  font-size:28px;
+  line-height:1.1;
+  color:var(--red);
+  margin:0 0 4px;
 }
 
 .subtitle{
-  font-size:17px;
+  font-size:14px;
   font-weight:600;
-  letter-spacing:0.5px;
+  letter-spacing:0.3px;
   color:var(--pine);
-  margin:0 0 8px;
+  margin:0 0 6px;
   text-transform:uppercase;
 }
 
 .venue-info{
-  font-size:16px;
+  font-size:14px;
   color:var(--pine);
   opacity:0.9;
-  margin-bottom:12px;
-  line-height:1.5;
+  margin-bottom:10px;
+  line-height:1.4;
 }
 
 .rule{
-  width:56px;
+  width:48px;
   height:2px;
   background:var(--pine);
-  margin:0 0 16px;
+  margin:0 0 12px;
 }
 
 /* ══════════════════════════════════════════
    SECTION TITLE
    ══════════════════════════════════════════ */
 .section-title{
-  font-size:14px;
+  font-size:12px;
   font-weight:700;
   letter-spacing:1px;
   text-transform:uppercase;
   color:var(--red);
   border-bottom:1px solid rgba(47,74,60,0.3);
   padding-bottom:4px;
-  margin:16px 0 12px;
+  margin:14px 0 10px;
 }
 
 /* ══════════════════════════════════════════
-   TIMELINE — Mobile First (stacked)
+   TIMELINE — Mobile (stacked)
    ══════════════════════════════════════════ */
 .timeline{
   display:flex;
   flex-direction:column;
-  gap:8px;
+  gap:6px;
   margin-bottom:8px;
 }
 
 .event{
   display:flex;
   flex-direction:column;
-  gap:4px;
-  font-size:16px;
+  gap:2px;
+  font-size:14px;
   color:var(--pine);
-  padding:12px 0;
+  padding:8px 0;
   border-bottom:1px solid rgba(47,74,60,0.1);
 }
 
 .event .time{
   font-weight:700;
   color:var(--red);
-  font-size:15px;
+  font-size:12px;
   text-transform:uppercase;
-  letter-spacing:0.5px;
+  letter-spacing:0.3px;
 }
 
 .event .details{
@@ -226,74 +233,74 @@ h2{
 .event .title-text{
   font-weight:600;
   text-transform:uppercase;
-  letter-spacing:0.5px;
-  font-size:16px;
+  letter-spacing:0.3px;
+  font-size:14px;
 }
 
 .event .subtext{
-  font-size:15px;
+  font-size:13px;
   opacity:0.85;
 }
 
 .event .list{
   margin:4px 0 0;
   padding-left:16px;
-  font-size:15px;
+  font-size:13px;
   opacity:0.9;
 }
 
 /* ══════════════════════════════════════════
-   SUMMARY BOX — Mobile First
+   SUMMARY BOX — Mobile
    ══════════════════════════════════════════ */
 .summary{
   background:rgba(47,74,60,0.08);
   border-left:3px solid var(--red);
-  padding:20px 16px;
-  margin-bottom:20px;
+  padding:16px 14px;
+  margin-bottom:16px;
   border-radius:0 8px 8px 0;
 }
 
 .summary .big-number{
   font-family:'Yellowtail', cursive;
-  font-size:40px;
+  font-size:30px;
   color:var(--red);
   line-height:1;
   margin:0;
 }
 
 .summary .per-month{
-  font-size:18px;
+  font-size:15px;
   font-weight:700;
   color:var(--pine);
-  margin:6px 0 0;
+  margin:4px 0 0;
 }
 
 .summary .per-month span{
   color:var(--red);
-  font-size:22px;
+  font-size:17px;
 }
 
 .summary .total{
-  font-size:15px;
+  font-size:12px;
   color:var(--pine);
   opacity:0.8;
   margin-top:4px;
 }
 
 /* ══════════════════════════════════════════
-   BUDGET TABLE — Mobile First
+   BUDGET TABLE — Mobile
    ══════════════════════════════════════════ */
 .budget-table{
   width:100%;
   border-collapse:collapse;
-  margin-bottom:20px;
+  margin-bottom:16px;
 }
 
 .budget-table th{
   text-align:left;
-  font-size:13px;
+  font-size:10px;
   text-transform:uppercase;
-  letter-spacing:0.5px;
+  letter-spacing:0.3px;
   color:var(--pine);
   padding:6px 0;
   border-bottom:1px solid rgba(47,74,60,0.2);
@@ -302,8 +309,8 @@ h2{
 .budget-table th:last-child{ text-align:right; }
 
 .budget-table td{
-  padding:10px 0;
-  font-size:16px;
+  padding:8px 0;
+  font-size:13px;
   color:var(--pine);
   border-bottom:1px solid rgba(47,74,60,0.1);
   vertical-align:top;
@@ -314,11 +321,11 @@ h2{
   font-weight:600;
   color:var(--red);
   white-space:nowrap;
-  padding-left:12px;
+  padding-left:8px;
 }
 
 .budget-table td .desc{
-  font-size:14px;
+  font-size:11px;
   opacity:0.7;
   font-weight:400;
   margin-top:2px;
@@ -327,14 +334,14 @@ h2{
 .budget-table tr.total-row td{
   border-top:2px solid var(--pine);
   border-bottom:none;
-  padding-top:12px;
+  padding-top:10px;
   font-weight:700;
-  font-size:17px;
+  font-size:14px;
 }
 
 .budget-table tr.total-row td:last-child{
   color:var(--red);
-  font-size:19px;
+  font-size:16px;
 }
 
 /* ══════════════════════════════════════════
@@ -343,15 +350,15 @@ h2{
 .notes{
   background:rgba(47,74,60,0.05);
   border-radius:8px;
-  padding:14px 16px;
-  margin-bottom:20px;
+  padding:12px 14px;
+  margin-bottom:16px;
 }
 
 .notes p{
-  margin:0 0 8px;
-  font-size:15px;
+  margin:0 0 6px;
+  font-size:13px;
   color:var(--pine);
-  line-height:1.5;
+  line-height:1.4;
 }
 
 .notes p:last-child{ margin-bottom:0; }
@@ -361,20 +368,20 @@ h2{
    FOOTER
    ══════════════════════════════════════════ */
 .party-footer{
-  margin-top:16px;
+  margin-top:12px;
   border-top:1px solid rgba(47,74,60,0.3);
-  padding-top:14px;
+  padding-top:12px;
   display:flex;
   flex-direction:column;
-  gap:6px;
-  font-size:15px;
+  gap:4px;
+  font-size:12px;
   color:var(--pine);
 }
 
-.party-footer .row{ display:flex; gap:10px; }
+.party-footer .row{ display:flex; gap:8px; }
 
 .party-footer .k{
-  width:70px;
+  width:60px;
   flex-shrink:0;
   font-weight:600;
   color:var(--red);
@@ -383,63 +390,63 @@ h2{
 .tagline{
   text-align:center;
   font-family:'Yellowtail', cursive;
-  font-size:32px;
+  font-size:22px;
   color:var(--red);
-  margin-top:16px;
+  margin-top:12px;
 }
 
 /* ══════════════════════════════════════════
-   GAMES GRID — Mobile First (1 column)
+   GAMES GRID — Mobile (1 column)
    ══════════════════════════════════════════ */
 .games-grid{
   display:grid;
   grid-template-columns:1fr;
-  gap:12px;
-  margin-bottom:20px;
+  gap:10px;
+  margin-bottom:16px;
 }
 
 .game-card{
   background:rgba(47,74,60,0.05);
   border-radius:8px;
-  padding:16px;
+  padding:14px;
   border:1px solid rgba(47,74,60,0.1);
 }
 
 .game-card h3{
   font-family:'Yellowtail', cursive;
-  font-size:26px;
+  font-size:20px;
   color:var(--red);
-  margin:0 0 6px;
+  margin:0 0 4px;
 }
 
 .game-card p{
-  font-size:15px;
+  font-size:13px;
   color:var(--pine);
   margin:0;
-  line-height:1.5;
+  line-height:1.4;
 }
 
 .game-card .status{
   display:inline-block;
-  font-size:12px;
+  font-size:10px;
   font-weight:700;
-  letter-spacing:1px;
+  letter-spacing:0.5px;
   text-transform:uppercase;
   color:var(--cream);
   background:var(--red);
-  padding:4px 12px;
+  padding:3px 8px;
   border-radius:4px;
-  margin-top:10px;
+  margin-top:8px;
 }
 
 /* ══════════════════════════════════════════
-   GALLERY GRID — Mobile First (1 column)
+   GALLERY GRID — Mobile (1 column)
    ══════════════════════════════════════════ */
 .gallery-grid{
   display:grid;
   grid-template-columns:1fr;
-  gap:12px;
-  margin-bottom:20px;
+  gap:10px;
+  margin-bottom:16px;
 }
 
 .gallery-item{
@@ -454,65 +461,64 @@ h2{
 
 .gallery-item span{
   font-family:'Yellowtail', cursive;
-  font-size:18px;
+  font-size:16px;
   color:var(--pine);
   opacity:0.5;
 }
 
 /* ══════════════════════════════════════════
-   CONTACT FORM — Mobile First
+   CONTACT FORM — Mobile
    ══════════════════════════════════════════ */
 .contact-form{
   display:flex;
   flex-direction:column;
-  gap:14px;
-  margin-bottom:20px;
+  gap:12px;
+  margin-bottom:16px;
 }
 
 .form-group{
   display:flex;
   flex-direction:column;
-  gap:6px;
+  gap:4px;
 }
 
 .form-group label{
-  font-size:12px;
+  font-size:11px;
   font-weight:600;
   color:var(--pine);
   text-transform:uppercase;
-  letter-spacing:1px;
+  letter-spacing:0.5px;
 }
 
 .form-group input,
 .form-group textarea{
-  padding:14px 16px;
+  padding:12px 14px;
   border:1px solid rgba(47,74,60,0.2);
   border-radius:6px;
   font-family:'Josefin Sans', sans-serif;
-  font-size:16px; /* Prevents iOS zoom on focus */
+  font-size:16px;
   color:var(--pine);
   background:rgba(255,255,255,0.5);
 }
 
 .form-group textarea{
-  min-height:100px;
+  min-height:80px;
   resize:vertical;
 }
 
 .btn-submit{
-  padding:16px 28px;
+  padding:14px 24px;
   background:var(--red);
   color:var(--cream);
   border:none;
   border-radius:6px;
   font-family:'Josefin Sans', sans-serif;
-  font-size:14px;
+  font-size:13px;
   font-weight:700;
-  letter-spacing:1px;
+  letter-spacing:0.5px;
   text-transform:uppercase;
   cursor:pointer;
   transition:background 0.2s ease;
-  /* Large touch target */
   min-height:48px;
 }
 
@@ -521,19 +527,19 @@ h2{
 }
 
 /* ══════════════════════════════════════════
-   PAYMENT METHODS — Mobile First
+   PAYMENT METHODS — Mobile
    ══════════════════════════════════════════ */
 .payment-methods{
   display:flex;
   flex-direction:column;
-  gap:12px;
-  margin-bottom:20px;
+  gap:10px;
+  margin-bottom:16px;
 }
 
 .payment-option{
   display:flex;
-  gap:12px;
-  padding:16px;
+  gap:10px;
+  padding:14px;
   background:rgba(47,74,60,0.05);
   border-radius:8px;
   border:1px solid rgba(47,74,60,0.1);
@@ -541,10 +547,10 @@ h2{
 }
 
 .payment-icon{
-  font-size:24px;
+  font-size:20px;
   flex-shrink:0;
-  width:44px;
-  height:44px;
+  width:36px;
+  height:36px;
   background:rgba(47,74,60,0.08);
   border-radius:8px;
   display:flex;
@@ -555,28 +561,28 @@ h2{
 .payment-details{
   display:flex;
   flex-direction:column;
-  gap:4px;
+  gap:2px;
   flex:1;
 }
 
 .payment-details h4{
-  font-size:17px;
+  font-size:14px;
   font-weight:700;
   color:var(--red);
   margin:0;
 }
 
 .payment-details p{
-  font-size:15px;
+  font-size:12px;
   color:var(--pine);
   margin:0;
-  line-height:1.5;
+  line-height:1.4;
 }
 
 .qr-placeholder{
-  margin-top:10px;
-  width:100px;
-  height:100px;
+  margin-top:8px;
+  width:80px;
+  height:80px;
   background:rgba(47,74,60,0.08);
   border-radius:8px;
   display:flex;
@@ -588,13 +594,13 @@ h2{
 
 .qr-placeholder span{
   font-family:'Yellowtail', cursive;
-  font-size:20px;
+  font-size:14px;
   color:var(--pine);
   opacity:0.6;
 }
 
 .qr-placeholder small{
-  font-size:12px;
+  font-size:9px;
   color:var(--pine);
   opacity:0.5;
   margin-top:2px;
@@ -609,19 +615,19 @@ h2{
   text-decoration:line-through;
   color:rgba(47,74,60,0.5);
   font-weight:400;
-  font-size:14px;
+  font-size:12px;
 }
 
 .potluck-badge{
   display:inline-block;
   background:linear-gradient(135deg,var(--pine) 0%,#1f3a2a 100%);
   color:var(--cream);
-  font-size:13px;
+  font-size:11px;
   font-weight:700;
-  letter-spacing:1px;
-  padding:4px 12px;
+  letter-spacing:0.5px;
+  padding:3px 10px;
   border-radius:4px;
-  margin-left:6px;
+  margin-left:4px;
   vertical-align:middle;
   text-transform:uppercase;
   font-style:italic;
@@ -631,12 +637,12 @@ h2{
   display:inline-block;
   background:var(--red);
   color:var(--cream);
-  font-size:13px;
+  font-size:11px;
   font-weight:700;
-  letter-spacing:0.5px;
-  padding:4px 10px;
+  letter-spacing:0.3px;
+  padding:3px 8px;
   border-radius:4px;
-  margin-left:6px;
+  margin-left:4px;
   vertical-align:middle;
   text-transform:uppercase;
 }
@@ -644,29 +650,29 @@ h2{
 .final-price{
   font-weight:700;
   color:var(--red);
-  font-size:18px;
+  font-size:15px;
 }
 
 .savings{
-  font-size:14px;
+  font-size:11px;
   color:var(--pine);
   opacity:0.7;
   margin-top:2px;
 }
 
 /* ══════════════════════════════════════════
-   DISCOUNT BANNER — Mobile First
+   DISCOUNT BANNER — Mobile
    ══════════════════════════════════════════ */
 .discount-banner{
   background:linear-gradient(135deg,var(--red) 0%,#9a2f24 100%);
   color:var(--cream);
-  padding:16px;
+  padding:12px 14px;
   border-radius:8px;
-  margin-bottom:20px;
+  margin-bottom:16px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:12px;
+  gap:10px;
 }
 
 .discount-banner .banner-text{
@@ -676,20 +682,20 @@ h2{
 }
 
 .discount-banner .banner-label{
-  font-size:12px;
+  font-size:10px;
   text-transform:uppercase;
-  letter-spacing:1px;
+  letter-spacing:0.5px;
   opacity:0.9;
 }
 
 .discount-banner .banner-amount{
   font-family:'Yellowtail', cursive;
-  font-size:36px;
+  font-size:26px;
   line-height:1;
 }
 
 .discount-banner .banner-sub{
-  font-size:14px;
+  font-size:11px;
   opacity:0.85;
 }
 
@@ -703,11 +709,11 @@ h2{
 .discount-banner .banner-badge{
   background:rgba(255,255,255,0.2);
   border:2px solid var(--cream);
-  padding:6px 12px;
+  padding:5px 10px;
   border-radius:6px;
   font-weight:700;
-  font-size:14px;
-  letter-spacing:0.5px;
+  font-size:11px;
+  letter-spacing:0.3px;
   text-transform:uppercase;
   white-space:nowrap;
   flex-shrink:0;
@@ -718,24 +724,43 @@ h2{
    ══════════════════════════════════════════ */
 @media(min-width:600px){
 
+  body{
+    padding-bottom:0;
+  }
+
   .navbar{
-    padding:0 32px;
     height:64px;
+    padding:0 32px;
+    justify-content:space-between;
   }
 
   .navbar .brand{
-    font-size:24px;
+    font-size:28px;
   }
 
-  .navbar .nav-links{
-    gap:4px;
-    overflow-x:visible;
+  /* Show desktop nav links in top bar */
+  .bottom-nav{
+    position:static;
+    border-top:none;
+    border-bottom:2px solid var(--red);
+    background:var(--cream);
+    height:64px;
+    padding:0 32px;
+    justify-content:center;
+    gap:8px;
   }
 
-  .navbar .nav-links a{
-    padding:8px 18px;
+  .bottom-nav .tab{
+    flex-direction:row;
+    gap:6px;
     font-size:13px;
-    letter-spacing:1px;
+    padding:8px 20px;
+    margin:0;
+    border-radius:6px;
+  }
+
+  .bottom-nav .tab .icon{
+    font-size:18px;
   }
 
   .page{
