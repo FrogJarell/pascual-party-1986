@@ -588,31 +588,16 @@ h2{
   line-height:1.4;
 }
 
-.qr-placeholder{
-  margin-top:8px;
-  width:80px;
-  height:80px;
-  background:rgba(47,74,60,0.08);
+.qr-code{
+  margin-top:10px;
+}
+
+.qr-img{
+  width:120px;
+  height:120px;
   border-radius:8px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  border:2px dashed rgba(47,74,60,0.2);
-}
-
-.qr-placeholder span{
-  font-family:'Yellowtail', cursive;
-  font-size:14px;
-  color:var(--pine);
-  opacity:0.6;
-}
-
-.qr-placeholder small{
-  font-size:9px;
-  color:var(--pine);
-  opacity:0.5;
-  margin-top:2px;
+  display:block;
+  border:1px solid rgba(47,74,60,0.1);
 }
 
 /* ══════════════════════════════════════════
