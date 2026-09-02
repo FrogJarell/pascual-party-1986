@@ -636,6 +636,12 @@ h2{
   opacity:0.85;
 }
 
+.discount-banner .banner-sub strong{
+  color:var(--red);
+  font-weight:700;
+  opacity:1;
+}
+
 .discount-banner .banner-badge{
   background:rgba(255,255,255,0.2);
   border:2px solid var(--cream);
