@@ -894,7 +894,6 @@ h2{
 }
 
 .payment-icon{
-  font-size:20px;
   flex-shrink:0;
   width:36px;
   height:36px;
@@ -903,6 +902,13 @@ h2{
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
+}
+
+.payment-logo{
+  width:24px;
+  height:24px;
+  object-fit:contain;
 }
 
 .payment-details{
