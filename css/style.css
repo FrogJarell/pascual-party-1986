@@ -533,6 +533,16 @@ h2{
   display:flex;
   flex-direction:column;
   align-items:center;
+  transition:all 0.3s ease;
+}
+
+.timer-current.running{
+  animation:tick-pulse 1s ease-in-out infinite;
+}
+
+@keyframes tick-pulse{
+  0%,100%{ opacity:1; }
+  50%{ opacity:0.5; }
 }
 
 .timer-label{

@@ -152,6 +152,7 @@
       document.getElementById('timer-elapsed').textContent = '--';
       document.getElementById('timer-result').style.display = 'none';
       document.getElementById('timer-reset').style.display = 'none';
+      document.querySelector('.timer-current').classList.add('running');
     }
 
     function timerStop(){
@@ -161,6 +162,7 @@
       const diff = Math.abs(elapsed - timerTarget);
       document.getElementById('timer-stop').disabled = true;
       document.getElementById('timer-elapsed').textContent = elapsed.toFixed(2) + 's';
+      document.querySelector('.timer-current').classList.remove('running');
       document.getElementById('timer-result').style.display = 'block';
       document.getElementById('timer-result-value').textContent = elapsed.toFixed(2) + 's';
       let diffText = '';
@@ -173,15 +175,15 @@
     }
 
     function timerReset(){
-      clearInterval(timerInterval);
       timerRunning = false;
       timerStartTime = null;
-      document.getElementById('timer-elapsed').textContent = '0.00s';
+      document.getElementById('timer-elapsed').textContent = '--';
       document.getElementById('timer-status').textContent = 'Press START to begin!';
       document.getElementById('timer-start').disabled = false;
       document.getElementById('timer-stop').disabled = true;
       document.getElementById('timer-result').style.display = 'none';
       document.getElementById('timer-reset').style.display = 'none';
+      document.querySelector('.timer-current').classList.remove('running');
       // Randomize target between 3-8 seconds
       timerTarget = Math.round((Math.random() * 5 + 3) * 10) / 10;
       document.getElementById('timer-target').textContent = timerTarget.toFixed(2) + 's';
