@@ -396,6 +396,21 @@ h2{
 }
 
 /* ══════════════════════════════════════════
+   FOOD IMAGES
+   ══════════════════════════════════════════ */
+.event-image{
+  margin-bottom:8px;
+}
+
+.food-img{
+  width:100%;
+  max-width:200px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+}
+
+/* ══════════════════════════════════════════
    GAMES GRID — Mobile (1 column)
    ══════════════════════════════════════════ */
 .games-grid{
