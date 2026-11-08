@@ -743,6 +743,17 @@ h2{
   text-decoration:underline;
 }
 
+.sheet-link{
+  font-size:12px;
+  font-weight:600;
+  color:var(--red);
+  text-decoration:none;
+}
+
+.sheet-link:hover{
+  text-decoration:underline;
+}
+
 /* ══════════════════════════════════════════
    GALLERY GRID — Mobile (2 columns)
    ══════════════════════════════════════════ */
